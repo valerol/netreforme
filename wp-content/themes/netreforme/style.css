@@ -1,0 +1,823 @@
+/*   
+Theme Name: Netreforme
+Description: Шаблон сайта netreforme.org
+Author: valerol
+Template: twentyfifteen
+.
+Сделано на основе шаблона WIX (http://ru.wix.com/website-template/view/html/1436)
+.
+*/
+
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #030303;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+body {
+	font-family: sans-serif, Arial, Helvetica;
+	margin: 0;
+}
+
+a {
+	color: #1f6135;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ===================
+    ALL
+   =================== */
+
+.screen-reader-text {
+	display: none;
+}
+
+#menu-social .screen-reader-text {
+	display: inline;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.main-container {
+	margin: 15px 0;
+}
+
+.green {
+	color: #1f6135;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+input, textarea {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: #2b2b2b;
+    padding: 8px 10px 7px;
+}
+
+input[type="submit"] {
+    background-color: #1f6135;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    border: none;
+}
+
+label {
+	display: block;
+}
+
+	/* ===================
+		HEADER
+	   =================== */
+
+.title a {
+	text-decoration: none;
+	color: #030303;
+}
+
+header nav li {
+	background: none;
+	padding: 0;
+}
+
+header nav a:active, header nav li.current_page_item, header nav li.current-menu-item {
+    color: #2b874a;
+}
+
+header nav a:hover {
+    color: grey;
+}
+
+	/* ===================
+		MAIN
+	   =================== */
+
+article img {
+    border: 1px solid #bcbbbb;
+    padding: 5px;
+}
+
+.source, .author {
+	font-style: italic;
+	font-size: 0.8em;
+	display: inline;
+}
+
+.source {
+	margin-right: 5px;
+}
+
+main h1, main h2, main h3 {
+	color: #333;
+}
+
+.search footer {
+	display: none;
+}
+
+
+blockquote {
+	border-left: 2px solid #1f6135;
+	font-style: italic;
+	margin: 0 20px;
+	padding-left: 15px;
+}
+
+	/* ===================
+		COMMENTS
+	   =================== */
+
+.comment-body {
+    background-color: #f0f0f0;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.comment-list {
+    padding: 0;
+}
+.comment-list, .comment-list ol {
+    list-style-type: none;
+}
+
+	/* ===================
+		SIDEBAR
+	   =================== */
+
+aside {	
+	margin-bottom: 5px;
+}
+
+#menu-sections {
+	font-size: 0.8em;
+	line-height: 1.6em;
+}
+
+.widget_links {
+	font-size: 1em;
+}
+
+.widget_links li, .widget_categories li {
+	font-size: 1.1em;
+	margin: 5px 0;
+}
+
+.widget_categories li ul li {
+	font-size: 1em;
+}
+
+/* ===================
+    MOBILE
+   =================== */
+
+	/* ===================
+		HEADER
+	   =================== */
+	   
+.header-container {
+	height: 160px;
+}
+
+.title {
+	font-size: 2em;
+	text-transform: uppercase;
+	position: relative;
+	margin: 0;
+	height: 70px;
+	top: -25px;
+}
+
+.title-2 {
+	float: left;
+	padding: 0 15px;
+	background: white;
+	margin: 0;
+	position: relative;
+	line-height: 25px;
+	font-size: 0.6em;
+}
+
+/* ===================
+    MENU
+   =================== */
+
+header nav {
+    float: left;
+    position: relative;
+    width: 100%;
+	left: 20px;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header nav li {
+	text-align: left;
+	font-size: 1.3em;
+	line-height: 2em;
+}
+
+header nav a {
+	color: black;
+}
+
+.navline {
+    background-color: black;
+    height: 25px;
+    position: relative;
+    top: 95px;
+}
+
+/* ==============
+    MAIN
+   ============== */
+   
+article header a {
+#	color: black;
+}
+
+article.sticky {
+	border-bottom: 4px solid #1f6135;
+}
+
+article.sticky header h2 {
+	color: #1f6135;
+	font-size: 2em;
+}
+
+article img {
+	display: none;
+}
+
+.date {
+	font-size: 0.8em;
+}
+
+a.more-link {
+	margin-left: 2px;
+	cursor: pointer;
+	display: inline-block;
+	font-family: helvetica-w01-light,helvetica-w02-light,sans-serif;
+	transition: color 0.4s ease 0s;
+	white-space: nowrap;
+	text-transform: uppercase;
+}
+
+.nav-links a {
+	margin: 5px;
+}
+
+.attachment-post-thumbnail {
+	display: none;
+}
+
+/* ==============
+    ASIDE
+   ============== */
+   
+aside select, aside button, aside input, aside select, aside textarea {
+	max-width: 100%;
+}
+
+aside h2 {
+	border-bottom: 5px solid #1f6135;
+}
+
+aside a {
+	color: black;
+}
+
+aside a:hover, li.current-cat>a {
+	color: #2b874a;
+}
+
+#searchform {
+	width: 100%;
+	border: 1px solid #bcbbbb;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+	height: 40px;
+}
+
+#searchform input, #searchform button {
+	margin: 10px;
+	padding: 0;
+}
+
+#searchform input {
+	border: none;
+    font-size: 1em;
+}
+
+#searchform button {
+	background: url("img/search.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: medium none;
+	float: right;
+	height: 20px;
+	width: 20px;
+}
+
+.writealetter, #searchform {
+	margin: 10px 0;
+}
+
+.writealetter {
+	height: 50px;
+	position: relative;
+	width: 100%;
+}
+
+.writealetter a {
+	color: #030303;
+	text-align: center;
+	text-decoration: none;
+	background-color: rgba(226, 223, 223, 0.35);
+	border: 1px solid rgba(151, 147, 147, 1);
+	bottom: 0;
+	cursor: pointer;
+	left: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;	
+}
+
+.writealetter a:active, .writealetter a:hover {
+	color: #fff;
+	background-color: rgba(151, 147, 147, 1);
+	border-color: rgba(255, 255, 255, 1);
+	transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+}
+
+.writealetter span {
+    top: 15px;
+    position: relative;
+}
+
+.widget-area {
+	background-color: rgba(255, 255, 255, 1);
+	border: 0 solid rgba(81, 79, 79, 1);
+	border-radius: 0;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+	padding: 10px;
+	top: 10px;
+	position: relative;
+}
+   
+/* ==============
+    FOOTER
+   ============== */
+
+.footer-container {   
+    background-color: rgba(3, 3, 3, 1);
+    border-top: 5px solid #1f6135;
+}
+   
+.footer-container footer {
+	color: white;
+	padding: 10px;
+	text-align: center;
+	margin: 20px 10px 0;
+}
+
+.donate {
+	display: none;
+}
+
+.donate p {
+	font-size: 0.9em;
+    display: block;
+    position: relative;
+}
+
+p.copywright {
+	font-size: 0.8em;
+	margin: 20px 0;
+}
+
+/* ===============
+    IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 768px) {
+
+	.title {
+		font-family: impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;
+	}
+	
+	.title-2, aside h2 {
+		font-family: "Open Sans Condensed", sans-serif;
+		font-weight: 200;
+	}
+	
+	.title-2 {
+		font-size: 1.4em;
+	}
+
+    header nav {
+        width: 60%;
+    }
+
+	h1, h2, h3 {
+		font-family: impact,impact-w01-2010,impact-w02-2010,impact-w10-2010,sans-serif;
+	}
+	
+	ul {
+		padding-left: 5px;
+	}
+
+	ul li {
+		list-style-type: none;
+		padding-top: 5px;
+		padding-left: 25px;
+		background: url('img/li.png') 0 8px no-repeat;
+	}
+
+	li ul {
+		padding-left: 0;
+	}
+
+	li ul li {
+		list-style-type: none;
+		background: url('img/arrow-2.png') 0 8px no-repeat;
+		padding-left: 20px;
+	}
+
+	.header-container, aside, .footer-container  {
+		font-size: 0.8em;
+	}
+	
+	.header-container {
+		height: 125px;
+	}
+	
+	.title {
+		font-size: 4em;
+		height: 70px;
+	}
+	
+	.attachment-post-thumbnail {
+		float: right;
+		display: block;
+		margin-left: 5px;
+		margin-bottom: 10px;
+	}
+
+	.aside h2 {
+		font-size: 1.4em;
+	}
+
+	.navline {
+		top: 95px;
+	}
+	
+	header nav li {
+		font-size: 1.2em;	
+		 line-height: 26px;
+        margin: 0 1.7%;
+        margin-bottom: 0;
+    }
+	
+	header nav a {
+		text-decoration: none;
+		color: white;
+    }
+
+    header nav li:last-child a {
+        margin-right: 0;
+    }
+    
+	.srch_query {
+		width: 65%;
+	}
+	
+	#menu-social {
+		padding: 0;
+	}
+	
+	#menu-social li {
+		list-style-type: none;
+		display: inline;
+		background: none;
+		padding: 0;
+	}
+	
+	#menu-social a {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+	}
+	
+	#menu-social li.menu-item-20118 a {
+		background: url('img/social.png') no-repeat -120px 0;
+	}
+	
+	#menu-social li.menu-item-20119 a {
+		background: url('img/social.png') no-repeat 0 0;
+	}
+	
+	#menu-social li.menu-item-20120 a {
+		background: url('img/social.png') no-repeat -210px 0;
+	}
+	
+	#menu-social .screen-reader-text {
+		display: none;
+	}
+	
+	article {
+		clear: both;
+	}
+	
+	article img {
+		clear: right;
+		display: block;
+		max-width: 470px;
+		height: auto;
+	}
+	
+	figure {
+		margin: 0;
+	}
+	
+	figcaption {
+		color: #4d4d4d;
+		font-size: 0.9em;
+		margin-left: 5px;
+	}
+	
+	.donate {
+		display: block;
+	}
+	
+	img.alignright {
+		float: right;
+		margin-left: 5px;
+	}
+	
+	img.alignleft {
+		float: left;
+		margin-right: 5px;
+	}
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    header nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+
+    main {
+        float: left;
+        width: 70%;
+    }
+
+    aside {
+		float: right;
+		width: 28%;
+		margin-left: 2%;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+
+	.header-container, aside, .footer-container {
+		font-size: 1em;
+	}
+	
+	.title {
+		height: 75px;
+	}
+	
+	.navline {
+		background-color: black;
+		height: 25px;
+		position: relative;
+		top: 100px;
+	}
+	
+	.writealetter span {
+		top: 13px;
+	}
+	
+	article img {
+		max-width: 600px;
+		height: auto;
+	}
+	
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+   
+	header nav {
+		width: 60%;
+	}
+	
+	.title-2 {
+		font-size: 1.4em;
+	}
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+    
+    	article img {
+		max-width: 700px;
+		height: auto;
+	}
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clear {
+    clear: both;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

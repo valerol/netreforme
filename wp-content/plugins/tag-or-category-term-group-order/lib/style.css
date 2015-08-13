@@ -1,0 +1,9 @@
+#catlist li a {
+	text-decoration: none;
+}
+#catlist li {
+	float: left;
+	padding: 5px 3px 0 0;
+	list-style: none;
+	color : #21759B;
+}
