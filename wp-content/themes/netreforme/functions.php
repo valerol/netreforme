@@ -176,7 +176,7 @@ add_filter('comment_text', 'replace_text');
 
 //Разрешенные теги в редакторе
 function override_mce_options($initArray) {
-	$opts = 'html,head,body,div[!class<mceTemp],p[-style],img[src|alt|title|class|width|height],br,a[*],table[*],tbody[*],tr[*],td[*],th[*],h1,h2,h3,h4,ul,ol,li,b,strong,i,em,dl[*],dt[*],dd[*]';
+	$opts = 'html,head,body,div[!class<mceTemp],p[-style],img[src|alt|title|class|width|height],br,a[*],table[*],tbody[*],tr[*],td[*],th[*],h1,h2,h3,h4,ul,ol,li,b,strong,i,em,dl[*],dt[*],dd[*],blockquote';
 	$initArray['valid_elements'] = $opts;	
 	$initArray['extended_valid_elements'] = $opts;
 	return $initArray;

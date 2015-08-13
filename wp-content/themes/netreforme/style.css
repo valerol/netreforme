@@ -2,6 +2,7 @@
 Theme Name: Netreforme
 Description: Шаблон сайта netreforme.org
 Author: valerol
+Template: twentyfifteen
 .
 Сделано на основе шаблона WIX (http://ru.wix.com/website-template/view/html/1436)
 .
@@ -169,6 +170,14 @@ main h1, main h2, main h3 {
 
 .search footer {
 	display: none;
+}
+
+
+blockquote {
+	border-left: 2px solid #1f6135;
+	font-style: italic;
+	margin: 0 20px;
+	padding-left: 15px;
 }
 
 	/* ===================
@@ -608,6 +617,16 @@ p.copywright {
 	
 	.donate {
 		display: block;
+	}
+	
+	img.alignright {
+		float: right;
+		margin-left: 5px;
+	}
+	
+	img.alignleft {
+		float: left;
+		margin-right: 5px;
 	}
 
 /* ========================
