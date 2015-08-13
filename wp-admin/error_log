@@ -1,2 +1,0 @@
-[23-Jul-2015 13:17:17 UTC] База данных WordPress возвратила ошибку Duplicate key name 'post_name' в ответ на запрос ALTER TABLE wp_posts ADD KEY post_name (post_name(191)), выполненный wp_upgrade, make_db_current_silent, dbDelta
-[06-Aug-2015 03:51:11 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/yogadv/public_html/netreforme.org/wp-content/themes/netreforme/functions.php on line 33

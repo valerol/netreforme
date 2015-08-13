@@ -74,3 +74,4 @@ jQuery(document).ready(function() {
 	AccordionMenu.init(args);
 
 });
+

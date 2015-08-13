@@ -22,17 +22,34 @@ function netreforme_setup() {
 endif; // netreforme_setup
 add_action( 'after_setup_theme', 'netreforme_setup' );
 
-//Подключаем скрипты и стили
+//Отключаем скрипты и стили по умолчанию, подключаем минифицированые и пользовательские
+function netreforme_styles() {
+	wp_enqueue_style( 'nr-minify-styles', '/min/?f=wp-content/themes/netreforme/style.css,wp-content/themes/netreforme/css/fonts.css,wp-includes/css/dashicons.css,wp-includes/css/admin-bar.css,wp-content/plugins/contact-form-7/includes/css/styles.css,wp-content/plugins/tag-or-category-term-group-order/lib/style.css,wp-content/plugins/ns-category-widget/public/assets/css/themes/default/style.css' );
+	
+	wp_dequeue_style( 'ns-category-widget-tree-style' );
+	wp_dequeue_style( 'open-sans' );
+	wp_dequeue_style( 'dashicons' );
+	wp_dequeue_style( 'admin-bar' );
+	wp_dequeue_style( 'contact-form-7' );
+	wp_dequeue_style( 'tctgo-style' );
+	wp_dequeue_style( 'ns-category-widget-tree-style-css' );
+	
+	wp_deregister_script( 'jquery' );
+	wp_deregister_script( 'jquery-migrate' );
+	wp_deregister_script( 'accordion-menu' );
+	
+}
 
-//function netreforme_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	//wp_enqueue_style( 'twentyfifteen-fonts', twentyfifteen_fonts_url(), array(), null );
+add_action( 'wp_enqueue_scripts', 'netreforme_styles' );
 
-//	wp_enqueue_script( 'twentyfifteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150330', true );
+function netreforme_scripts() {
+	wp_enqueue_script( 'nr-minify-scripts', '/min/?f=wp-includes/js/jquery/jquery.js,wp-includes/js/jquery/jquery-migrate.js,wp-content/plugins/accordion-menu/accordion-menu.js' );
+	wp_enqueue_script( 'netreforme-script-vk', '//vk.com/js/api/openapi.js' );
+		
+}
+add_action( 'wp_footer', 'netreforme_scripts' );
 
-//}
-//add_action( 'wp_enqueue_scripts', 'netreforme_scripts' );
-
+//Виджеты
 function netreforme_widgets_init() {
 	
 	register_sidebar( array(
@@ -98,7 +115,7 @@ function wp_nav_menu_extended($args = array()) {
     }
 }
 
-//Дополнительные поля
+//Дополнительные поля "Автор" и "Источник"
 	// подключаем функцию активации мета блока (my_extra_fields)
 add_action('add_meta_boxes', 'my_extra_fields', 1);
 
@@ -159,14 +176,14 @@ add_filter('comment_text', 'replace_text');
 
 //Разрешенные теги в редакторе
 function override_mce_options($initArray) {
-	$opts = 'html,head,body,div[!class<mceTemp],p[-style],img[src|alt|title|class|width|height],br,a[*],table[*],tbody[*],tr[*],td[*],th[*],h1,h2,h3,h4,ul,ol,li,b,strong,i,em,dl[*],dt[*],dd[*],blockquote';
+	$opts = 'html,head,body,div[!class<mceTemp],p[-style],img[src|alt|title|class|width|height],br,a[*],table[*],tbody[*],tr[*],td[*],th[*],h1,h2,h3,h4,ul,ol,li,b,strong,i,em,dl[*],dt[*],dd[*]';
 	$initArray['valid_elements'] = $opts;	
 	$initArray['extended_valid_elements'] = $opts;
 	return $initArray;
 }
 add_filter('tiny_mce_before_init', 'override_mce_options');
 
-//Теги в виджете
+//Размер шрифта в виджете тегов
 function nr_widget_tagcloud_args() {
 	$args = array(
 			'smallest' => 0.7, 
