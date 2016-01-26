@@ -1,9 +1,9 @@
 === WP Minify Fix ===
-Tags: minify, js, css, html, javascript, cascading style sheets, optimize, performance, speed, http request, phpspeedy, fix, compress, performance, import
+Tags: minify, js, css, html, javascript, cascading style sheets, optimize, performance, performance optimization, optimize, optimizer, speed, http request, phpspeedy, fix, compress, performance, import, cache, combine, bundle, plugin, google page speed, nginx
 Contributors: NodeCode, madeinthayaland
-Requires at least: 2.7
-Tested up to: 4.1
-Stable Tag: 1.4.0
+Requires at least: 2.8
+Tested up to: 4.3.1
+Stable Tag: 1.4.1
 
 [Fixed] This plugin uses the Minify engine to combine and compress JS and CSS files
 to improve page load time.
@@ -11,7 +11,7 @@ to improve page load time.
 == Description ==
 This plugin is a fork of [WP Minify](http://wordpress.org/plugins/wp-minify/) to fix bugs and add features, because it has not been updated since 2012-6-4.
 
-This plugin integrates the [Minify engine](http://code.google.com/p/minify/)
+This plugin integrates the [Minify engine](https://github.com/mrclay/minify)
 into your WordPress blog.  Once enabled, this plugin will combine and compress
 JS and CSS files to improve page load time.
 
@@ -47,7 +47,15 @@ WordPress header.
 * Detection and elimination of duplicate sources.
 * Plugin hooks!
 
+You can also commit changes on our [Github repository](https://github.com/nodecode/wp-minify-fix).
+
 == Changelog ==
+= 1.4.1 =
+* Duplicate footer scripts bug fixed
+* PHP warning message in some scenarios fixed
+* Newlines before the first attribute in open tags removed
+* Compatibility changes
+
 = 1.4.0 =
 * Added option for the HTML5 async attribute
 * Added option for a separate JavaScript file in the footer

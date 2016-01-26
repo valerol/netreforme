@@ -3,13 +3,13 @@
 Plugin Name: WP Minify Fix
 Plugin URI: http://wordpress.org/plugins/wp-minify-fixed/
 Description: [Fixed] This plugin uses the Minify engine to combine and compress JS and CSS files to improve page load time.
-Version: 1.4.0
+Version: 1.4.1
 Author: NodeCode
 Author URI: http://nodecode.de
 */
 
 /*
-Copyright 2013 NodeCode (email: info@nodecode.de)
+Copyright 2013-2015 NodeCode (email: info@nodecode.de)
 Copyright 2009-2011 Thaya Kareeson (email: thaya.kareeson@gmail.com)
 
 This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ class WPMinify {
 	var $name_dashed = 'wp-minify-fix'; 
 	var $name_proper = 'WP Minify Fix'; 
 	var $required_wp_version = '2.7';
-	var $version = '1.4.0';
+	var $version = '1.4.1';
 
 	var $c = null;
 	var $debug = false;
@@ -473,7 +473,7 @@ class WPMinify {
 
 			// append &debug if we need to
 			if ($wpm_options['debug_nominify']) {
-				$debug_string = '&amp;debug=true';
+				$debug_string = '&debug=true';
 			} else {
 				$debug_string = '';
 			}
@@ -481,7 +481,7 @@ class WPMinify {
 			// append base directory if needed
 			$base = $this->get_base();
 			if ($base != '') {
-				$base_string = '&amp;b='.$base;
+				$base_string = '&b='.$base;
 			} else {
 				$base_string = '';
 			}
@@ -489,13 +489,13 @@ class WPMinify {
 			// get rid of any base directory specification in extra options
 			$extra_minify_options = preg_replace('/(&|&amp;|\b)b=[^&]*/', '', trim($wpm_options['extra_minify_options']));
 			if (trim($extra_minify_options) != '') {
-				$extra_string = '&amp;'.$extra_minify_options;
+				$extra_string = '&'.$extra_minify_options;
 			} else {
 				$extra_string = '';
 			}
 
 			// append last modified time
-			$latest_modified_string = '&amp;m='.$latest_modified;
+			$latest_modified_string = '&m='.$latest_modified;
 
 			return array($base_url . '?f=' . implode(',', $files) . $debug_string . $base_string . $extra_string . $latest_modified_string);
 		}
@@ -881,7 +881,8 @@ class WPMinify {
 				}
 			}
 	
-			$js_locations_footer = array_unique($js_locations_footer);
+			if ($js_locations_footer != NULL)
+				$js_locations_footer = array_unique($js_locations_footer);
 		}
 
 		return array($content, $js_locations, $js_locations_footer);
@@ -889,10 +890,12 @@ class WPMinify {
 
 	function inject_js($content, $js_locations, $js_locations_footer) {
 		if (count($js_locations) > 0) {
+			$wpm_options = get_option($this->name);
 			// build minify URLS
 			$js_tags = '';
 			$minify_urls = $this->build_minify_urls($js_locations, '.js');
 			if ($js_locations_footer) {
+				$js_tags_footer = '';
 				$minify_urls_footer = $this->build_minify_urls($js_locations_footer, '.js');
 			}
 			
@@ -924,22 +927,22 @@ class WPMinify {
 			if ($js_locations_footer) {
 				foreach ($minify_urls_footer as $minify_url) {
 					$minify_url = apply_filters('wp_minify_js_url', $minify_url); // Allow plugins to modify final minify URL
-					$js_tags .= "<script type='text/javascript' src='$minify_url'></script>";
+					$js_tags_footer .= "<script type='text/javascript' src='$minify_url'></script>";
 				}
 	
 				$matches = preg_match('/<!-- WP-Minify JS Footer -->/', $content);
 	
 				if ($matches) {
-					$content = preg_replace('/<!-- WP-Minify JS Footer -->/', "$js_tags", $content, 1); // limit 1 replacement
+					$content = preg_replace('/<!-- WP-Minify JS Footer -->/', "$js_tags_footer", $content, 1); // limit 1 replacement
 				} else {
-					$content = preg_replace('/<!-- WP-Minify Footer Placeholder -->/', "$js_tags", $content, 1); // limit 1 replacement
+					$content = preg_replace('/<!-- WP-Minify Footer Placeholder -->/', "$js_tags_footer", $content, 1); // limit 1 replacement
 					$placeholderRemoved = true;
 				}
 			}
 			
-			// If necessary, remove placeholder comment
+			// If necessary (custom footer position comment), remove placeholder comment
 			if ($placeholderRemoved === false) {
-				$content = preg_replace('/<!-- WP-Minify Footer Placeholder -->/', "$js_tags", $content, 1); // limit 1 replacement
+				$content = preg_replace('/<!-- WP-Minify Footer Placeholder -->/', "", $content, 1); // limit 1 replacement
 			}
 		}
 		return $content;

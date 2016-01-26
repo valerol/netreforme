@@ -15,39 +15,30 @@ function netreforme_setup() {
 	load_theme_textdomain( 'netreforme', get_template_directory() . '/languages' );
 
 	register_nav_menus( array(
-    'top' => __( 'Верхнее меню', 'netreforme' )
+    'top' => __( 'Top Menu', 'netreforme' ),
+ 	'social'  => __( 'Social', 'netreforme' ),
 	) );
 
 }
 endif; // netreforme_setup
 add_action( 'after_setup_theme', 'netreforme_setup' );
 
-//Отключаем скрипты и стили по умолчанию, подключаем минифицированые и пользовательские
-function netreforme_styles() {
-	wp_enqueue_style( 'nr-minify-styles', '/min/?f=wp-content/themes/netreforme/style.css,wp-content/themes/netreforme/css/fonts.css,wp-includes/css/dashicons.css,wp-includes/css/admin-bar.css,wp-content/plugins/contact-form-7/includes/css/styles.css,wp-content/plugins/tag-or-category-term-group-order/lib/style.css,wp-content/plugins/ns-category-widget/public/assets/css/themes/default/style.css' );
-	
-	wp_dequeue_style( 'ns-category-widget-tree-style' );
-	wp_dequeue_style( 'open-sans' );
-	wp_dequeue_style( 'dashicons' );
-	wp_dequeue_style( 'admin-bar' );
-	wp_dequeue_style( 'contact-form-7' );
-	wp_dequeue_style( 'tctgo-style' );
-	wp_dequeue_style( 'ns-category-widget-tree-style-css' );
-	
-	wp_deregister_script( 'jquery' );
-	wp_deregister_script( 'jquery-migrate' );
-	wp_deregister_script( 'accordion-menu' );
-	
+//Подключаем скрипты и стили
+function my_scripts() { 
+	//Общие для всех проектов
+	wp_enqueue_script( 'respond', '/wp-content/themes/korpus/modernizr-2.8.3-respond-1.4.2.min.js' );
+	wp_enqueue_style( 'normalize', '/wp-content/themes/korpus/css/normalize.css' );
+	wp_enqueue_style( 'main', get_stylesheet_uri() );
+
+	//Для данного сайта
+	wp_enqueue_style( 'fonts-style', '/wp-content/themes/netreforme/css/fonts.css' );	
 }
 
-add_action( 'wp_enqueue_scripts', 'netreforme_styles' );
+add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
-function netreforme_scripts() {
-	wp_enqueue_script( 'nr-minify-scripts', '/min/?f=wp-includes/js/jquery/jquery.js,wp-includes/js/jquery/jquery-migrate.js,wp-content/plugins/accordion-menu/accordion-menu.js' );
-	wp_enqueue_script( 'netreforme-script-vk', '//vk.com/js/api/openapi.js' );
-		
-}
-add_action( 'wp_footer', 'netreforme_scripts' );
+//Поддержка миниатюр
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 240, 180, true );
 
 //Виджеты
 function netreforme_widgets_init() {
@@ -165,14 +156,6 @@ function my_extra_fields_update( $post_id ){
 	}
 	return $post_id;
 }
-
-function replace_text($text) {
-  $text = str_replace('href="http://', 'href="/away.php?page=http://', $text);
-  $text = str_replace('href="/away.php?page=http://'.$_SERVER['SERVER_NAME'], 'href="', $text);
-  return $text;
-}
-add_filter('the_content', 'replace_text');
-add_filter('comment_text', 'replace_text');
 
 //Разрешенные теги в редакторе
 function override_mce_options($initArray) {
