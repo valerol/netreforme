@@ -7,9 +7,10 @@
 	<meta http-equiv="Content-type" content="text/html; charset=<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="description" content="Мы требуем: отмены Закона №83-ФЗ, сохранения бесплатного школьного образования, увеличения зарплаты учителей, повышения качества образовательных и медицинских услуг">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<title><?php wp_title( '»', 'true', 'right' ); ?><?php bloginfo('name'); ?></title>
 	<?php wp_head(); ?>
 	<script type="text/javascript">
 	  VK.init({
