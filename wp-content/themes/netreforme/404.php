@@ -20,10 +20,6 @@ get_header(); ?>
 
 				<div class="page-content">
 					<p><?php _e( 'К сожалению, страница по данному адресу отсутствует или перенесена. Попробуйте воспользоваться поиском.' ); ?></p>
-					<?php get_search_form(); ?>
-					
-					<?php list_hooked_functions('wp_enqueue_scripts'); ?>
-					
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
