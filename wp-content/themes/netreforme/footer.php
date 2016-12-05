@@ -1,11 +1,11 @@
 		<div class="footer-container">
 			<footer>
 				<div class="donate">
-					<p>РЎРґРµР»Р°Р№С‚Рµ РїРѕР¶РµСЂС‚РІРѕРІР°РЅРёРµ, С‡С‚РѕР±С‹ РїРѕРґРґРµСЂР¶Р°С‚СЊ РЅР°С€ Р±Р»РѕРі Рё РїРѕРјРѕС‡СЊ РІСЃРµРј Р±С‹С‚СЊ РІ РєСѓСЂСЃРµ СЃРѕР±С‹С‚РёР№</p>
-					<iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=410011340427598&quickpay=donate&payment-type-choice=on&default-sum=100&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&project-name=NetReforme.org&project-site=netreforme.org&button-text=05&fio=on&mail=on&phone=on&successURL=" width="510" height="105"></iframe>
+					<p>Сделайте пожертвование, чтобы поддержать наш блог и помочь всем быть в курсе событий</p>
+					<iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=410011003238930&quickpay=donate&payment-type-choice=on&default-sum=100&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&project-name=NetReforme.org&project-site=netreforme.org&button-text=05&fio=on&mail=on&phone=on&successURL=" width="510" height="105"></iframe>
 				</div>
-				<p class="copywright">В© Р“СЂР°Р¶РґР°РЅСЃРєР°СЏ РёРЅРёС†РёР°С‚РёРІР° Р·Р° Р±РµСЃРїР»Р°С‚РЅРѕРµ РѕР±СЂР°Р·РѕРІР°РЅРёРµ, 2010вЂ“<?php echo date('Y'); ?></p>
-				<!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t25.1;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=88 height=15 alt='' title='LiveInternet: РїРѕРєР°Р·Р°РЅРѕ С‡РёСЃР»Рѕ РїРѕСЃРµС‚РёС‚РµР»РµР№ Р·Р° СЃРµРіРѕРґРЅСЏ'><\/a>")</script><!--/LiveInternet-->
+				<p class="copywright">© Гражданская инициатива за бесплатное образование, 2010–<?php echo date('Y'); ?></p>
+				<!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t25.1;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=88 height=15 alt='' title='LiveInternet: показано число посетителей за сегодня'><\/a>")</script><!--/LiveInternet-->
 			</footer>
 			<?php wp_footer(); ?>
         </div>
